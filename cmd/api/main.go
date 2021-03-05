@@ -1,15 +1,18 @@
 package main
 
 import (
-	_ "api/routers"
-
-	beego "github.com/beego/beego/v2/server/web"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	if beego.BConfig.RunMode == "dev" {
-		beego.BConfig.WebConfig.DirectoryIndex = true
-		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-	}
-	beego.Run()
+	r := gin.New()
+
+	r.GET("/", hello)
+	r.Run()
+}
+
+func hello(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"message": "hello",
+	})
 }

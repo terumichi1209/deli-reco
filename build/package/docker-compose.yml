@@ -6,7 +6,7 @@ services:
       dockerfile: ./build/package/Dockerfile
     tty: true
     volumes:
-      - ./../../cmd/api:/usr/local/go/src/deli-reco # マウントディレクトリ指定
+      - ./../../cmd/api:/usr/local/go/src/api # マウントディレクトリ指定
     ports:
       - 8080:8080
   db:

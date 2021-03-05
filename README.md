@@ -4,7 +4,8 @@
 ```
 cd build/package
 docker-compose up -d --build
+docker-compose exec app go run main.go
 ```
 
-Can access this page. but 404 now.
+Can access this page.
 http://localhost:8080/
